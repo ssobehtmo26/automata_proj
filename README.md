@@ -1,5 +1,8 @@
 # :hammer: Automata
 
+
+
+
 "Automata" is a web application that uses Puppeteer, a Node.js library, to automate form filling in Google Forms. Puppeteer is a powerful tool that provides a high-level API for controlling a headless version of Google Chrome or Chromium.
 
 Here's an elaboration on how this system works:
@@ -91,6 +94,9 @@ Here's an elaboration on how this system works:
 <img width="1391" alt="Screenshot 2023-09-30 at 12 38 19 AM" src="https://github.com/ssobehtmo26/automata_proj/assets/95176555/34a01176-c899-4c98-b1f6-678d0a120f5c">
 
 # :clapper: Video Demonstration
+
+https://github.com/ssobehtmo26/automata_proj/assets/95176555/cd80273f-ade5-40e9-a00e-b895d0aff201
+
 
 
 
