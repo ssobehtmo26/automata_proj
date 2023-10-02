@@ -8,14 +8,25 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const app_1 = require("./app");
-const start = () => __awaiter(void 0, void 0, void 0, function* () {
-    if (!app_1.config.port) {
-        throw new Error("[CONFIG] PORT NOT FOUND!!");
-    }
-    app_1.app.listen(app_1.config.port, () => {
-        console.log("[listening] SERVER ON", app_1.config.port);
+exports.deleteFiles = void 0;
+const fs_1 = __importDefault(require("fs"));
+const path_1 = __importDefault(require("path"));
+const deleteFiles = () => __awaiter(void 0, void 0, void 0, function* () {
+    fs_1.default.readdir("static/images", (err, files) => {
+        if (err)
+            throw err;
+        files.forEach((file) => {
+            const filePath = path_1.default.join("static/images", file);
+            fs_1.default.unlink(filePath, (err) => {
+                if (err)
+                    throw err;
+                console.log(`${file} was deleted`);
+            });
+        });
     });
 });
-start();
+exports.deleteFiles = deleteFiles;

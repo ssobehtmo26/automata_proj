@@ -1,9 +1,6 @@
 class AppConfig {
   private _port: string | undefined;
 
-  constructor() {
-    Object.setPrototypeOf(this, AppConfig.prototype);
-  }
   public setPort(p: string | undefined) {
     this._port = p;
   }

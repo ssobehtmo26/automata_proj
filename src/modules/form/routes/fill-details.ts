@@ -1,5 +1,5 @@
 import express, { NextFunction, Request, Response } from "express";
-import { body, validationResult } from "express-validator";
+import { body} from "express-validator";
 import puppeteer from "puppeteer";
 import { Constants } from "../utils/constants";
 import { delay } from "../utils/delay";
@@ -17,9 +17,8 @@ router.post(
       .withMessage("Field link must be specified")
       .isURL()
       .withMessage("Please enter a valid URL"),
-
-    validateRequest,
   ],
+  validateRequest,
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       const { link } = req.body;

@@ -8,14 +8,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const app_1 = require("./app");
-const start = () => __awaiter(void 0, void 0, void 0, function* () {
-    if (!app_1.config.port) {
-        throw new Error("[CONFIG] PORT NOT FOUND!!");
+exports.getImageUrl = void 0;
+const fs_1 = __importDefault(require("fs"));
+const getImageUrl = () => __awaiter(void 0, void 0, void 0, function* () {
+    const abc = [];
+    for (const file of fs_1.default.readdirSync("static/images")) {
+        abc.push(file);
     }
-    app_1.app.listen(app_1.config.port, () => {
-        console.log("[listening] SERVER ON", app_1.config.port);
-    });
+    return abc;
 });
-start();
+exports.getImageUrl = getImageUrl;
